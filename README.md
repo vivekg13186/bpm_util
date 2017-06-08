@@ -1,6 +1,6 @@
-## IBM BPM bpm.util.Util
+## IBM BPM Utility
 
-GUI Tool util to view environment variables from IBM BPM TWX files.
+GUI Tool to view application environment variables from IBM BPM TWX files.
 
 ## Installation
 
