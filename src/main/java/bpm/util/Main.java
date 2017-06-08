@@ -1,7 +1,8 @@
+package bpm.util;
+
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
@@ -28,22 +29,18 @@ public class Main {
                 chooser.setFileFilter(filter);
                 final int returnVal = chooser.showOpenDialog(frame);
                 if(returnVal == JFileChooser.APPROVE_OPTION) {
-                    System.out.println("You chose to open this file: " +chooser.getSelectedFile().getName());
-                    new SwingWorker<String,Object>(){
+                   new SwingWorker<String,Object>(){
 
                         @Override
                         protected String doInBackground() throws Exception {
                             List<EnvVar> result = EnvVarFromTWXFile.process(chooser.getSelectedFile());
                             if(result!=null){
-                                System.out.println("result " +result.size());
                                 for(int row=0;row<result.size();row++){
-                                    System.out.println("row "+row);
                                     String[] values = result.get(row).toArray();
                                     DefaultTableModel dt =(DefaultTableModel)table.getModel();
                                     dt.addRow(values);
                                 }
                             }
-                            System.out.println("finish");
                             return null;
                         }
                     }.execute();
@@ -80,7 +77,6 @@ public class Main {
         mainwindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         initMenu(mainwindow);
         initComponent(mainwindow);
-        //DefaultTableModel dt = (DefaultTableModel) table.getModel();
         mainwindow.setSize(500,500);
         mainwindow.pack();
         mainwindow.setVisible(true);

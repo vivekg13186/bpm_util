@@ -1,3 +1,5 @@
+package bpm.util;
+
 import org.apache.commons.io.IOUtils;
 import sun.nio.cs.StandardCharsets;
 

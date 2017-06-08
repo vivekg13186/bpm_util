@@ -1,3 +1,5 @@
+package bpm.util;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -50,7 +52,6 @@ public class EnvVarFromTWXFile {
             System.out.println(temp.name);
             result.add(temp);
         }
-        System.out.println("Processed ---"+result.size());
         return result;
     }
 
