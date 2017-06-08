@@ -60,8 +60,6 @@ public class Main {
         frame.setJMenuBar(menubar);
     }
     private  static  void initComponent(JFrame frame){
-        String data[][]={ {"none","none","none","none","none","none","none","none","none"}
-                };
         String column[]={"Project","Snapshot","Track","Name","Default","Development","Testing","Staging","Production"};
         DefaultTableModel dt =new DefaultTableModel();
         for(int i=0;i<column.length;i++){
