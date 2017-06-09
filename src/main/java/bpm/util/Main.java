@@ -19,7 +19,7 @@ public class Main {
 
 
     static void initMenu(final JFrame frame){
-        importTWXMenu =new JMenuItem("Import TWX");
+        importTWXMenu = new JMenuItem("View Env. variables from TWX");
 
         importTWXMenu.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -34,10 +34,16 @@ public class Main {
                         @Override
                         protected String doInBackground() throws Exception {
                             List<EnvVar> result = EnvVarFromTWXFile.process(chooser.getSelectedFile());
+                            DefaultTableModel dt = (DefaultTableModel) table.getModel();
+                            if (dt.getRowCount() > 0) {
+                                for (int i = dt.getRowCount() - 1; i > -1; i--) {
+                                    dt.removeRow(i);
+                                }
+                            }
                             if(result!=null){
                                 for(int row=0;row<result.size();row++){
                                     String[] values = result.get(row).toArray();
-                                    DefaultTableModel dt =(DefaultTableModel)table.getModel();
+
                                     dt.addRow(values);
                                 }
                             }
