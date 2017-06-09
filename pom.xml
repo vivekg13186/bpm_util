@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
@@ -35,6 +35,15 @@
     <build>
     <finalName>bpm_util</finalName>
     <plugins>
+        <plugin>
+            <groupId>com.zenjava</groupId>
+            <artifactId>javafx-maven-plugin</artifactId>
+            <version>8.8.3</version>
+            <configuration>
+                <vendor>BPM Util</vendor>
+                <mainClass>bpm.util.MainUI</mainClass>
+            </configuration>
+        </plugin>
 
         <!-- download source code in Eclipse, best practice -->
         <plugin>

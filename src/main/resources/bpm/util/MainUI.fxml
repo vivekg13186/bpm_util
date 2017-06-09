@@ -1,0 +1,90 @@
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns:fx="http://javafx.com/fxml" styleClass="root" fx:controller="bpm.util.MainUIController">
+    <top>
+        <MenuBar fx:id="menuBar" styleClass="menu-bar">
+            <menus>
+                <Menu text="File">
+                    <items>
+                        <MenuItem text="Import TWX File" onAction="#onImportTWXFileClick"/>
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+    <center>
+        <GridPane alignment="center" hgap="10.0" vgap="10.0">
+            <TableView fx:id="tableView"
+                       GridPane.columnIndex="0"
+                       GridPane.columnSpan="1"
+                       GridPane.hgrow="ALWAYS"
+                       GridPane.vgrow="ALWAYS"
+                       GridPane.rowIndex="0">
+                <columns>
+
+                    <TableColumn fx:id="projectCol" text="Project" prefWidth="100">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="project"/>
+                        </cellValueFactory>
+                    </TableColumn>
+
+                    <TableColumn fx:id="trackCol" text="Track" prefWidth="100">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="track"/>
+                        </cellValueFactory>
+                    </TableColumn>
+
+                    <TableColumn fx:id="snapshotCol" text="Snapshot" prefWidth="100">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="snapshot"/>
+                        </cellValueFactory>
+                    </TableColumn>
+
+                    <TableColumn fx:id="nameCol" text="Name" prefWidth="100">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="name"/>
+                        </cellValueFactory>
+                    </TableColumn>
+
+                    <TableColumn fx:id="defaultCol" text="Default" prefWidth="100">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="defaultValue"/>
+                        </cellValueFactory>
+                    </TableColumn>
+
+                    <TableColumn fx:id="devValueCol" text="Development" prefWidth="100">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="devValue"/>
+                        </cellValueFactory>
+                    </TableColumn>
+
+                    <TableColumn fx:id="testValueCol" text="Test" prefWidth="100">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="testValue"/>
+                        </cellValueFactory>
+                    </TableColumn>
+
+                    <TableColumn fx:id="stageValueCol" text="Staging" prefWidth="100">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="stageValue"/>
+                        </cellValueFactory>
+                    </TableColumn>
+
+                    <TableColumn fx:id="prodValueCol" text="Production" prefWidth="100">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="prodValue"/>
+                        </cellValueFactory>
+                    </TableColumn>
+
+
+                </columns>
+
+                <sortOrder>
+                    <fx:reference source="projectCol"/>
+                </sortOrder>
+            </TableView>
+
+        </GridPane>
+    </center>
+</BorderPane>

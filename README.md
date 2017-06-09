@@ -4,7 +4,7 @@ GUI Tool to view application environment variables from IBM BPM TWX files.
 
 ## Installation
 
-Download the jar from dist folder.
+Download the app.zip from dist folder.
 
 ## License
 
